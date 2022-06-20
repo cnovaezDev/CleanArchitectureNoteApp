@@ -10,5 +10,6 @@ import com.plcoding.cleanarchitecturenoteapp.feature_note.domain.model.Note
 )
 abstract class NoteDatabase: RoomDatabase(){
 
+abstract val noteDao: NoteDao
 
 }
