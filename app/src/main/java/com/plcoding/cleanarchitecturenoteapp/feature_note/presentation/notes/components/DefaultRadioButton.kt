@@ -24,7 +24,7 @@ fun DefaultRadioButton(
    verticalAlignment = Alignment.CenterVertically
  ) {
      RadioButton(selected = selected,
-         onClick = { onSelect },
+         onClick = { onSelect() },
      colors= RadioButtonDefaults.colors(
          selectedColor = MaterialTheme.colors.primary,
          unselectedColor = MaterialTheme.colors.onBackground,

@@ -41,6 +41,7 @@ fun NoteItem(
                 lineTo(size.width, cutCornerSize.toPx())
                 lineTo(size.width, size.height)
                 lineTo(0f, size.height)
+                close()
             }
             clipPath(clipPath) {
                 drawRoundRect(
@@ -49,7 +50,9 @@ fun NoteItem(
                     cornerRadius = CornerRadius(cornerRadius.toPx())
                 )
                 drawRoundRect(
-                    color = Color(ColorUtils.blendARGB(note.color, 0x000000, 0.2f)),
+                    color = Color(
+                        ColorUtils.blendARGB(note.color, 0x000000, 0.2f)
+                    ),
                     topLeft = Offset(size.width - cutCornerSize.toPx(), -100f),
                     size = Size(cutCornerSize.toPx() + 100f, cutCornerSize.toPx() + 100f),
                     cornerRadius = CornerRadius(cornerRadius.toPx())
@@ -84,7 +87,8 @@ fun NoteItem(
         ) {
             Icon(
                 imageVector = Icons.Default.Delete,
-                contentDescription = "Delete Note"
+                contentDescription = "Delete Note",
+                tint = MaterialTheme.colors.onSurface
             )
         }
     }
